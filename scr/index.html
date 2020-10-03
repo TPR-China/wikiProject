@@ -1,481 +1,404 @@
-<!DOCTYPE html>
+{{IGEM_TopBar}}
+{{TPR_China}}
 <html>
-
-<head>
-  <!-- Basic -->
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <!-- Mobile Metas -->
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <!-- Site Metas -->
-  <meta name="keywords" content="" />
-  <meta name="description" content="" />
-  <meta name="author" content="" />
-
-  <title>Fanadesh</title>
-  <!-- bootstrap core css -->
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-  <!-- progress barstle -->
-  <link rel="stylesheet" href="css/css-circular-prog-bar.css">
-  <!-- fonts style -->
-  <link href="https://fonts.googleapis.com/css?family=Poppins:400,700|Raleway:400,600&display=swap" rel="stylesheet">
-  <!-- font wesome stylesheet -->
-  <link rel="stylesheet" href="css/font-awesome.min.css">
-  <!-- Custom styles for this template -->
-  <link href="css/style.css" rel="stylesheet" />
-  <!-- responsive style -->
-  <link href="css/responsive.css" rel="stylesheet" />
+<meta name="robots" content="noindex,follow" />
+	<style type="text/css">
+	.nav, .nav ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	line-height: 1;
+}
+.nav {
+	/* Layout & positioning */
+	position: relative;
+	margin: auto; /* Centering the menu */
+	height: 46px;
+	width: 92%;
+	text-align: center;
+	
+	/* Background & effects */
+	box-shadow: 0 1px 2px rgba(0, 0, 0, .3);
+	background: #65c0bb;
+	background-image: url(data:image/png;base64,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);
+}
 
 
+.nav>li {
+	margin: 0;
+	line-height: 1;
+	padding: 0;
+	display: inline;
+	position: relative;
+	margin: 0 12px;
+}
+
+.nav::after, .nav::before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 6px;
+	height: 0px;
+	width: 0px;
+	border: 1px solid #65c0bb;
+	z-index: -1;
+}
+
+/* The left ribbon */
+.nav::before {
+	border-left-color: transparent;
+	left: -30px;
+}
+
+/* The right ribbon */
+.nav::after {
+	border-right-color: transparent;
+	right: -30px;
+}
+
+.nav>li>a {
+	display: inline-block;
+	padding: 15px 20px;
+	position: relative;
+
+	font-family: sans-serif;
+	font-size: 16px;
+	text-transform: uppercase;
+	text-decoration: none;
+	color: #fff;
+	text-shadow: 1px 2px rgba(0, 0, 0, .2);
+	
+	-webkit-transition: color .3s linear;
+	   -moz-transition: color .3s linear;
+	     -o-transition: color .3s linear;
+	    -ms-transition: color .3s linear;
+	        transition: color .3s linear;
+}
+
+.nav>li>a:hover, .nav>li:hover>a {
+	color: #fff;
+}
+
+.nav>li>a::after {
+	content: "";
+	height: 15px;
+	width: 15px;
+	background-image: url(data:image/png;base64,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);
+	position: absolute;
+	right: -20px;
+	top: 16px;
+	display: block;
+}
+
+.nav>li:last-child>a::after {
+	display: none;
+}
+
+.nav ul {
+	position: absolute;
+	left: -9999px;
+	padding-top: 10px;
+	border-bottom: 1px solid #ccc;
+	opacity: 0;
+}
+
+.nav>li:hover>ul {
+	left: 0;
+	opacity: 1;
+	top: 30px;
+}
 
 
-  <link rel="stylesheet" href="css/css-circular-prog-bar.css">
+.nav ul li:hover>ul {
+	left: 150px;
+	opacity: 1;
+	top: -11px;
+	padding-left: 12px;
+	border-bottom: 0;
+	box-shadow: none;
+}
+
+.nav ul li {
+	display: block;
+	position: relative;
+	border-top: 1px solid #ccc;
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+	width: 150px;
+	text-align: justify;
+	z-index: 9;
+	background: #eee;
+	box-shadow: 3px 4px 0 rgba(0, 0, 0, .1);
+	-webkit-transition: background .3s linear;
+	-moz-transition: background .3s linear;
+	-ms-transition: background .3s linear;
+	-o-transition: background .3s linear;
+}
+
+.nav ul li a {
+	font-family: "Oswald", sans-serif;
+	font-size: 14px;
+	text-decoration: none;
+	display: block;
+	padding: 7px 12px 7px 20px;
+	color: #65c0bb;
+	-webkit-transition: color .3s linear;
+	-moz-transition: color .3s linear;
+	-ms-transition: color .3s linear;
+	-o-transition: color .3s linear;
+}
+
+.nav ul li:hover>a, .nav ul li a:hover {
+	color: #4db6b0;
+}
+
+.nav ul li:hover {
+	background: #f7f7f7;
+}
+
+.nav ul ul li:last-child {
+	border-bottom: 1px solid #ccc;
+}
+
+.nav ul ul li {
+	box-shadow: 3px 3px 0 rgba(0, 0, 0, .1);
+}
+
+.nav ul::after, .nav ul::before {
+	content: "";
+	display: block;
+	z-index: 1;
+	position: absolute;
+	height: 9px;
+	width: 9px;
+}
+
+.nav>li>ul::after {
+	border: 1px solid #ccc;
+	background: #eee;
+	border-right: 0;
+	border-bottom: 0;
+	top: 5px;
+	left: 25px;
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+}
+
+.nav>li>ul::before {
+	height: 1px;
+	width: 12px;
+	background: #eee;
+	border-right: 0;
+	border-bottom: 0;
+	top: 10px;
+	left: 24px;
+	z-index: 99;
+}
+
+.nav ul ul::after {
+	border: 1px solid #ccc;
+	background: #eee;
+	border-right: 0;
+	border-bottom: 0;
+	top: 20px;
+	left: 8px;
+	position: absolute;
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+}
+
+.nav ul ul::before {
+	height: 10px;
+	width: 1px;
+	background: #eee;
+	z-index: 99;
+	top: 20px;
+	left: 12px;
+}
+	</style>
+
+<div class"container">
+	<ul class="nav">
+		<li><a href="#">Home</a></li>
+		<li>
+			<a href="#">Team</a>
+			<ul>
+				<li><a href="team.html">Team</a></li>
+				<li><a href="#">Attributions</a></li>
+				<li><a href="#">Collaborations</a></li>
+       			<li><a href="#">Gallery</a></li>
+			</ul>
+		</li>
+		<li>
+			<a href="#">Project</a>
+		<ul>
+
+				<li><a href="#">Description</a></li>
+				<li><a href="#">Design</a></li>
+				<li><a href="#">Experiments</a></li>
+       			<li><a href="#">Model</a></li>
+				<li><a href="#">Hardware</a></li>
+				<li><a href="#">Software</a></li>
+				<li><a href="#">Safety</a></li>
+				<li><a href="#">Graphics Design</a></li>
+			</ul>
+		</li>
+		<li><a href="#">Results</a>
+			<ul>
+				<li><a href="#">Results</a></li>
+				<li><a href="#">Improve</a></li>
+				<li><a href="#">Demonstrate</a></li>
+			</ul>
+		</li>
+		<li><a href="#">Parts</a>
+		<ul>
+				<li><a href="#">Parts</a></li>
+				<li><a href="#">Collection</a></li>
+			</ul>
+		</li>
+		<li><a href="#">Human</a>
+			<ul>
+				<li><a href="#">Integrated Human</a></li>
+				<li><a href="#">Public Engagement</a></li>
+			</ul>
+		</li>
+		<li><a href="#">Awards</a>
+			<ul>
+				<li><a href="#">Medals</a></li>
+				<li><a href="#">Awards</a></li>
+			</ul></li>
+		<li><a href="#">Press&Contact</a></li>
+	</ul>
+</div>
+	
+<div class="column full_size" >
+<h1> Welcome to iGEM 2020! </h1>
+<p>Your team has been approved and you are ready to start the iGEM season!<img src="https://2020.igem.org/Special:UploadStash/thumb/17qq89xjlmd0.6ss6hg.4340.jpg/120px-17qq89xjlmd0.6ss6hg.4340.jpg" alt=""/></p>
 
 
-</head>
+<img src="https://2020.igem.org/Special:UploadStash/thumb/17qbrc7obaok.olp06h.4340.jpg/120px-17qbrc7obaok.olp06h.4340.jpg">
+	
 
-<body>
-  <div class="top_container">
-    <!-- header section strats -->
-    <header class="header_section">
-      <div class="container">
-        <nav class="navbar navbar-expand-lg custom_nav-container ">
-          <a class="navbar-brand" href="index.html">
-            <span>
-              Fanadesh
-            </span>
-          </a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
-              <ul class="navbar-nav  ">
-                <li class="nav-item active">
-                  <a class="nav-link" href="index.html"> Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item ">
-                  <a class="nav-link" href="about.html"> About </a>
-                </li>
-
-                <li class="nav-item ">
-                  <a class="nav-link" href="admission.html"> Admission </a>
-                </li>
-
-                <li class="nav-item">
-                  <a class="nav-link" href="why.html"> Why Us </a>
-                </li>
-
-                <li class="nav-item">
-                  <a class="nav-link" href="contact.html">Contact Us</a>
-                </li>
-
-              </ul>
-            </div>
-        </nav>
-      </div>
-    </header>
-    <section class="hero_section ">
-      <div class="hero-container container">
-        <div class="hero_detail-box">
-          <h1>
-            Best way
-            to fund
-            your study
-            abroad
-          </h1>
-          <p>
-            ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-            magna aliqua. Ut enim ad minim veniam
-          </p>
-          <div class="hero_btn-continer">
-            <a href="" class="call_to-btn btn_white-border">
-              Read More
-            </a>
-          </div>
-        </div>
-        <div class="hero_img-container">
-          <div>
-            <img src="images/hero.png" alt="" class="img-fluid">
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
-  <!-- end header section -->
-
-  <div class="common_style">
-
-    <!-- about section -->
-    <section class="about_section">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6">
-            <div class="about_img-container">
-              <img src="images/about.png" alt="">
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="about_detail-box">
-              <h3>
-                About our School
-              </h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-              </p>
-              <div class="">
-                <a href="" class="call_to-btn btn_white-border">
-                  Read More
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+</div> 
 
 
-    <!-- end about section -->
+<div class="column full_size" >
 
-    <!-- admission section -->
-    <section class="admission_section">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6">
-            <div class="admission_detail-box">
-              <h3>
-                Admission open
-              </h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-              </p>
-              <div class="">
-                <a href="" class="call_to-btn btn_white-border">
-                  Read More
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="admission_img-container">
-              <img src="images/admission.png" alt="">
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+<h3>Before you start</h3>
+<p> Please read the following pages:</p>
+<ul>
+<li> <a href="https://2020.igem.org/Competition">Competition Hub</a> </li>
+<li> <a href="https://2020.igem.org/Competition/Deliverables/Wiki">Wiki Requirements page</a></li>
+<li> <a href="https://2020.igem.org/Resources/Template_Documentation">Template documentation</a></li>
+</ul>
+</div>
+
+
+<div class="clear extra_space"></div>
+<div class="line_divider"></div>
+<div class="clear extra_space"></div>
 
 
 
-    <!-- end admission section -->
+<div class="column full_size" >	
+<h3> Styling your wiki </h3>
+<p>You may style this page as you like or you can simply leave the style as it is. You can easily keep the styling and edit the content of these default wiki pages with your project information and completely fulfill the requirement to document your project.</p>
+<p>While you may not win Best Wiki with this styling, your team is still eligible for all other awards. This default wiki meets the requirements, it improves navigability and ease of use for visitors, and you should not feel it is necessary to style beyond what has been provided.</p> 
 
-    <!-- why section -->
-    <section class="why_section">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6">
-            <div class="why_img-container">
-              <img src="images/why.png" alt="">
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="why_detail-box">
-              <h3>
-                Why learn on Fanadesh
-              </h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-              </p>
-              <div class="">
-                <a href="" class="call_to-btn btn_white-border">
-                  Read More
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+</div>
 
 
-    <!-- end why section -->
-
-    <!-- determine section -->
-    <section class="determine_section">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6">
-            <div class="determine_detail-box">
-              <h3>
-                Datermine the right for you
-              </h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-              </p>
-              <div class="">
-                <a href="" class="call_to-btn btn_white-border">
-                  Read More
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="determine_img-container">
-              <img src="images/determine.png" alt="">
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
 
-    <!-- end determine section -->
-
-  </div>
-
-  <!-- client section -->
-  <section class="client_section layout_padding">
-    <h2 class="">
-      Testimonial
-    </h2>
-    <div class="container">
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                  <div class="row">
-                      <div class="col-md-3">
-                        <div class="client_img-box">
-                          <img src="images/client.png" alt="">
-                        </div>
-                      </div>
-                      <div class="col-md-9">
-                        <div class="client_detail-box">
-                          <h5>
-                            Alex Du
-                          </h5>
-                          <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-                            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-              </div>
-              <div class="carousel-item">
-                  <div class="row">
-                      <div class="col-md-3">
-                        <div class="client_img-box">
-                          <img src="images/client.png" alt="">
-                        </div>
-                      </div>
-                      <div class="col-md-9">
-                        <div class="client_detail-box">
-                          <h5>
-                            Alex Du
-                          </h5>
-                          <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-                            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-              </div>
-              <div class="carousel-item">
-                  <div class="row">
-                      <div class="col-md-3">
-                        <div class="client_img-box">
-                          <img src="images/client.png" alt="">
-                        </div>
-                      </div>
-                      <div class="col-md-9">
-                        <div class="client_detail-box">
-                          <h5>
-                            Alex Du
-                          </h5>
-                          <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-                            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-              </div>
-            </div>
-          </div>
-     
-    </div>
-  </section>
+<div class="clear extra_space"></div>
 
 
-  <!-- end client section -->
+
+<div class="column third_size" >	
+
+<h3> Uploading pictures and files </h3>
+<p> You must upload any pictures and files to the iGEM 2020 server. Remember to keep all your pictures and files within your team's namespace or at least include your team's name in the file name. </p>
 
 
-    <!-- contact section -->
+<p>When you upload, set the "Destination Filename" to <b> T--YourOfficialTeamName--NameOfFile.jpg</b>. (If you don't do this, someone else might upload a different file with the same "Destination Filename", and your file would be erased!)</p>
 
-    <section class="contact_section ">
+<div class="button_link">
+<a href="https://2020.igem.org/Special:Upload">
+UPLOAD FILES
+</a>
+</div>
 
-        <div class="container">
-         
-          <div class="row">
-            <div class="col-md-6">
-              <div class="d-flex justify-content-center d-md-block">
-                <h2>
-                  Contact Us
-                </h2>
-              </div>
-              <form action="">
-                <div class="contact_form-container">
-                  <div>
-                    <div>
-                      <input type="text" placeholder="Name">
-                    </div>
-                    <div>
-                      <input type="email" placeholder="Email">
-                    </div>
-                    <div>
-                      <input type="text" placeholder="Phone Number">
-                    </div>
-                    <div class="mt-5">
-                      <input type="text" placeholder="Message">
-                    </div>
-                    <div class="mt-5">
-                      <button type="submit">
-                        send
-                      </button>
-                    </div>
-                  </div>
-    
-                </div>
-    
-              </form>
-            </div>
-            <div class="col-md-6">
-              <div class="contact_img-box">
-                <img src="images/students.jpg" alt="">
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- end contact section -->
-      <section class="info_section layout_padding-top">
-        <div class="info_logo-box">
-          <h2>
-              Fanadesh
-          </h2>
-        </div>
-          <div class="container layout_padding2">
-            <div class="row">
-              <div class="col-md-3">
-                <h5>
-                    About Us                                                                             
-                </h5>
-               <p>
-                  dolor sit amet, consectetur magna aliqua. Ut enim ad minim veniam, quisdotempor incididunt r 
-               </p>
-              </div>
-              <div class="col-md-3">
-                <h5>
-                    Useful Link 
-                </h5>
-                <ul>
-                  <li>
-                    <a href="">
-                        Video games
-                    </a>
-                  </li>
-                  <li>
-                   <a href="">
-                      Remote control
-                   </a>
-                  </li>
-                  <li>
-                    <a href="">
-                        3d controller
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <div class="col-md-3">
-                <h5>
-                    Contact Us
-                </h5>
-                <p>
-                    dolor sit amet, consectetur magna aliqua. quisdotempor incididunt ut e 
-                </p>
-              </div>
-              <div class="col-md-3">
-           
-                <div class="subscribe_container">
-                  <h5>
-                      Newsletter
-                  </h5>
-                  <div class="form_container">
-                    <form action="">
-                      <input type="email" placeholder="Enter your email">
-                      <button type="submit">
-                        Subscribe
-                      </button>
-                    </form>
-                  </div>
-                </div>
-                
-              </div>
-            </div>
-          </div>
-          <div class="container">
-              <div class="social_container">
-                 
-                  <div class="social-box">
-                    <a href="">
-                      <img src="images/fb.png" alt="">
-                    </a>
-      
-                    <a href="">
-                      <img src="images/twitter.png" alt="">
-                    </a>
-                    <a href="">
-                      <img src="images/linkedin.png" alt="">
-                    </a>
-                    <a href="">
-                      <img src="images/instagram.png" alt="">
-                    </a>
-                  </div>
-                </div>
-          </div>
-        </section>
+</div>
 
-  <!-- footer section -->
-  <section class="container-fluid footer_section">
-    <p>
-      Copyright &copy; 2020.Company name All rights reserved.<a target="_blank" href="http://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a>
-    </p>
-  </section>
-  <!-- footer section -->
+<div class="column third_size" >	
+<h3> Wiki template information </h3>
+<p>We have created these wiki template pages to help you get started and to help you think about how your team will be evaluated. You can find a list of all the pages tied to awards here at the <a href="https://2020.igem.org/Judging/Pages_for_Awards">Pages for awards</a> link. You must edit these pages to be evaluated for medals and awards, but ultimately the design, layout, style and all other elements of your team wiki is up to you!</p>
 
-  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
-  <script type="text/javascript" src="js/bootstrap.js"></script>
+</div> 
 
- 
-</body>
+
+
+<div class="column third_size" >
+<div class="highlight decoration_B_full">	
+<h3> Editing your wiki </h3>
+<p>On this page you can document your project, introduce your team members, document your progress and share your iGEM experience with the rest of the world! </p> 
+<p>Use WikiTools - Edit in the black menu bar to edit this page</p>
+
+<div class="button_link">
+ <a href="https://2020.igem.org/wiki/index.php?title=Team:TPR_China&action=edit"> 
+EDIT PAGE
+</a>
+</div>
+
+
+</div>
+</div>
+
+
+
+
+
+<div class="clear extra_space"></div>
+<div class="line_divider"></div>
+<div class="clear extra_space"></div>
+
+
+
+<div class="column two_thirds_size" >	
+<h3>Tips</h3>
+<p>This wiki will be your team’s first interaction with the rest of the world, so here are a few tips to help you get started: </p>
+<ul>
+<li>State your accomplishments! Tell people what you have achieved from the start. </li>
+<li>Be clear about what you are doing and how you plan to do this.</li>
+<li>You have a global audience! Consider the different backgrounds that your users come from.</li>
+<li>Make sure information is easy to find; nothing should be more than 3 clicks away.  </li>
+<li>Avoid using very small fonts and low contrast colors; information should be easy to read.  </li>
+<li>Start documenting your project as early as possible; don’t leave anything to the last minute before the Wiki Freeze. For a complete list of deadlines visit the <a href="https://2020.igem.org/Calendar">iGEM 2020 calendar</a> </li>
+<li>Have lots of fun! </li>
+</ul> 
+</div>
+
+
+<div class="column third_size">
+<div class="highlight decoration_A_full">		
+<h3>Inspiration</h3>
+<p> You can also view other team wikis for inspiration! Here are some examples:</p>
+<ul>
+<li> <a href="http://2014.igem.org/Team:SDU-Denmark/"> 2014 SDU Denmark </a> </li>
+<li> <a href="http://2014.igem.org/Team:Aalto-Helsinki">2014 Aalto-Helsinki</a> </li>
+<li> <a href="http://2014.igem.org/Team:LMU-Munich">2014 LMU-Munich</a> </li>
+<li> <a href="http://2014.igem.org/Team:Michigan"> 2014 Michigan</a></li>
+<li> <a href="http://2014.igem.org/Team:ITESM-Guadalajara">2014 ITESM-Guadalajara </a></li>
+<li> <a href="http://2014.igem.org/Team:SCU-China"> 2014 SCU-China </a></li>
+</ul>
+</div>
+</div>
+
+
+
 
 </html>
