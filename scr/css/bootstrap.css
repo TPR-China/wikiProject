@@ -10044,37 +10044,55 @@ nav{
   width: 100%;
 	height: 60px;
 }
-.title,#text1,#text2{
+.title,#text1,#text2,#text3,#text4,#text5,#text6,#text7,#text8{
 	
 	line-height: 60px;
 	float: left;
 	display: inline-block;
-	color: #c3c3c3;
+	color: white;
 	width: 100px;
 	text-align: center;
 }
-#list1,#list2{
+#list1,#list2,#list3,#list4,#list5,#list6,#list7,#list8{
 	background: white;
 	text-align: center;
-	width: 120px;
+	width: 100px;
 	list-style: none;
 	line-height: 60px;
 	border-radius: 5px;
+	top: -1200px;
 	position: absolute;
-	top: -120px;
 	z-index: -1;
 }
 #list2{
-	right: -20px;
+	right: 600px;
 }
-#text1:hover ~ #list1,#text2:hover ~ #list2{
+#list3{
+	right: 490px;
+}
+#list4{
+	right: 400px;
+}
+#list5{
+	right: 300px;
+}
+#list6{
+	right: 190px;
+}
+#list7{
+	right: 100px;
+}
+#list8{
+	right: -5px;
+}
+#text1:hover ~ #list1,#text2:hover ~ #list2,#text3:hover ~ #list3,#text4:hover ~ #list4,#text5:hover ~ #list5,#text6:hover ~ #list6,#text7:hover ~ #list7,#text8:hover ~ #list8{
 	top: 60px;
 	transition-duration: 0.5s;
 }
-#list1:hover,#list2:hover{
+#list1:hover,#list2:hover,#list3:hover,#list4:hover,#list5:hover,#list6:hover,#list7:hover,#list8:hover{
 	top: 60px;
 }
-.content1:hover,.content2:hover{
+.content1:hover,.content2:hover,.content3:hover,.content4:hover,.content5:hover,.content6:hover,.content7:hover,.content8:hover{
 	background: #747474;
 	border-radius: 5px;
 	cursor: pointer;
